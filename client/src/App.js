@@ -7,17 +7,17 @@ const App = () => {
   const [newTask, setNewtask] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/gettasks').then((arr) => setItem(arr.data));
+    axios.get('https://todo-backend-8fn0.onrender.com/gettasks').then((arr) => setItem(arr.data));
   }, []);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/addtask', { todo: newTask }).then((arr) => setItem(arr.data));
+    axios.post('https://todo-backend-8fn0.onrender.com/addtask', { todo: newTask }).then((arr) => setItem(arr.data));
     setNewtask('');
   };
 
   const deleteHandler = (id) => {
-    axios.delete(`http://localhost:5000/delete/${id}`).then((arr) => setItem(arr.data));
+    axios.delete(`https://todo-backend-8fn0.onrender.com/delete/${id}`).then((arr) => setItem(arr.data));
   };
 
   return (
