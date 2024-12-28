@@ -62,4 +62,4 @@ app.delete('/delete/:id',async(req,res)=>{
 
 
 
-app.listen(5000, () => console.log("Server Running...Don't Worry"));
+app.listen(process.env.PORT || 5000, () => console.log("Server Running...Don't Worry"));
